@@ -1,6 +1,7 @@
 import { Args, Query, Resolver } from '@nestjs/graphql';
 import { Accident } from './accident.schema';
 import { AccidentService } from './accident.service';
+import ConnectionArgs from 'src/connection-args/connection-args';
 
 @Resolver(() => Accident)
 export class AccidentResolver {
@@ -9,6 +10,11 @@ export class AccidentResolver {
   @Query(() => [Accident], { name: 'accidents' })
   async findAll() {
     return await this.accidentService.findAll();
+  }
+
+  @Query(() => [Accident], { name: 'accidents_range_date' })
+  async rangeDate(@Args('args') args: ConnectionArgs): Promise<Accident[]> {
+    return this.accidentService.rangeDate(args.startDate, args.endDate);
   }
 
   @Query(() => [Accident], { name: 'accidents_by_day_of_week' })

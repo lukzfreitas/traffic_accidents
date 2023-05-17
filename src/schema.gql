@@ -34,5 +34,14 @@ type Accident {
 
 type Query {
   accidents: [Accident!]!
+  accidents_range_date(args: ConnectionArgs!): [Accident!]!
   accidents_by_day_of_week(dia_sem: String!): [Accident!]!
+}
+
+input ConnectionArgs {
+  """Date started to filter range"""
+  startDate: String
+
+  """Date ended to filter range"""
+  endDate: String
 }

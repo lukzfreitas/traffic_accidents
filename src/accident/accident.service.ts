@@ -12,7 +12,15 @@ export class AccidentService {
   }
 
   async findByDayOfWeek(dia_sem: string): Promise<Accident[]> {
-    const result = await this.AccidentModel.find({ dia_sem }).exec();
-    return result;
+    return await this.AccidentModel.find({ dia_sem }).exec();
+  }
+
+  async rangeDate(startDate: string, endDate: string): Promise<Accident[]> {
+    return await this.AccidentModel.find().where({
+      data_hora: {
+        $gte: startDate,
+        $lte: endDate,
+      },
+    });
   }
 }
