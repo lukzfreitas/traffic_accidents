@@ -1,0 +1,38 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Accident {
+  data_hora: String
+  feridos: Float!
+  feridos_gr: Float!
+  mortes: Float!
+  morte_post: Float!
+  fatais: Float!
+  auto: Float!
+  taxi: Float!
+  lotacao: Float!
+  onibus_urb: Float!
+  onibus_met: Float!
+  onibus_int: Float!
+  caminhao: Float!
+  moto: Float!
+  carroca: Float!
+  bicicleta: Float!
+  outro: Float!
+  cont_vit: Float!
+  ups: Float!
+  patinete: Float!
+  longitude: Float!
+  latitude: Float!
+  log1: String!
+  tipo_acid: String!
+  dia_sem: String
+  noite_dia: String!
+  regiao: String!
+}
+
+type Query {
+  accidents: [Accident!]!
+  accidents_by_day_of_week(dia_sem: String!): [Accident!]!
+}
