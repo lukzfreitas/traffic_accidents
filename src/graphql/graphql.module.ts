@@ -6,7 +6,7 @@ import { join } from 'path';
 @Module({
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
-      autoSchemaFile: join(process.cwd(), '/schema.gql'),
+      autoSchemaFile: join(__dirname, '../../temp/schema.gql'),
       driver: ApolloDriver,
     }),
   ],
