@@ -1,7 +1,7 @@
 import { Args, Query, Resolver } from '@nestjs/graphql';
 import { Accident } from './accident.schema';
 import { AccidentService } from './accident.service';
-import ConnectionArgs from 'src/connection-args/connection-args';
+import ConnectionArgs from '../connection-args/connection-args';
 
 @Resolver(() => Accident)
 export class AccidentResolver {
