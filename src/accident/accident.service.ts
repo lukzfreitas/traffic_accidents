@@ -17,7 +17,7 @@ export class AccidentService {
 
   async rangeDate(startDate: string, endDate: string): Promise<Accident[]> {
     return await this.AccidentModel.find().where({
-      data_hora: {
+      DATA_HORA: {
         $gte: startDate,
         $lte: endDate,
       },
