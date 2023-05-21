@@ -8,111 +8,123 @@ export type AccidentDocument = Accident & Document;
 export class Accident {
   @Prop({ type: String })
   @Field({ nullable: true })
-  data_hora: string;
+  DATA_HORA: string;
 
   @Prop({ type: Number })
   @Field()
-  feridos: number;
+  FERIDOS: number;
 
   @Prop({ type: Number })
   @Field()
-  feridos_gr: number;
+  FERIDOS_GR: number;
 
   @Prop({ type: Number })
   @Field()
-  mortes: number;
+  MORTES: number;
 
   @Prop({ type: Number })
   @Field()
-  morte_post: number;
+  MORTE_POST: number;
 
   @Prop({ type: Number })
   @Field()
-  fatais: number;
+  FATAIS: number;
 
   @Prop({ type: Number })
   @Field()
-  auto: number;
+  AUTO: number;
 
   @Prop({ type: Number })
   @Field()
-  taxi: number;
+  TAXI: number;
 
   @Prop({ type: Number })
   @Field()
-  lotacao: number;
+  LOTACAO: number;
 
   @Prop({ type: Number })
   @Field()
-  onibus_urb: number;
+  ONIBUS_URB: number;
 
   @Prop({ type: Number })
   @Field()
-  onibus_met: number;
+  ONIBUS_MET: number;
 
   @Prop({ type: Number })
   @Field()
-  onibus_int: number;
+  ONIBUS_INT: number;
 
   @Prop({ type: Number })
   @Field()
-  caminhao: number;
+  CAMINHAO: number;
 
   @Prop({ type: Number })
   @Field()
-  moto: number;
+  MOTO: number;
 
   @Prop({ type: Number })
   @Field()
-  carroca: number;
+  CARROCA: number;
 
   @Prop({ type: Number })
   @Field()
-  bicicleta: number;
+  BICICLETA: number;
 
   @Prop({ type: Number })
   @Field()
-  outro: number;
+  OUTRO: number;
 
   @Prop({ type: Number })
   @Field()
-  cont_vit: number;
+  UPS: number;
 
   @Prop({ type: Number })
   @Field()
-  ups: number;
+  LONGITUDE: number;
 
   @Prop({ type: Number })
   @Field()
-  patinete: number;
-
-  @Prop({ type: Number })
-  @Field()
-  longitude: number;
-
-  @Prop({ type: Number })
-  @Field()
-  latitude: number;
+  LATITUDE: number;
 
   @Prop({ type: String })
   @Field()
-  log1: string;
+  LOG1: string;
 
   @Prop({ type: String })
   @Field()
-  tipo_acid: string;
+  TIPO_ACID: string;
 
   @Prop({ type: String })
   @Field({ nullable: true })
-  dia_sem: string;
+  DIA_SEM: string;
 
   @Prop({ type: String })
   @Field()
-  noite_dia: string;
+  NOITE_DIA: string;
 
   @Prop({ type: String })
   @Field()
-  regiao: string;
+  REGIAO: string;
+
+  @Prop({ type: String })
+  @Field()
+  TEMPO: string;
+
+  @Prop({ type: Number })
+  @Field()
+  FX_HORA: string;
+
+  @Prop({ type: Number })
+  @Field()
+  DIA: string;
+
+  @Prop({ type: Number })
+  @Field()
+  MES: string;
+
+  @Prop({ type: Number })
+  @Field()
+  ANO: string;
 }
 
 export const AccidentSchema = SchemaFactory.createForClass(Accident);
