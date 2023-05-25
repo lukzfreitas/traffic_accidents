@@ -14,7 +14,7 @@ export class AccidentResolver {
 
   @Query(() => [Accident], { name: 'accidents_range_date' })
   async rangeDate(@Args('args') args: ConnectionArgs): Promise<Accident[]> {
-    return this.accidentService.rangeDate(args.startDate, args.endDate);
+    return this.accidentService.rangeDate(args);
   }
 
   @Query(() => [Accident], { name: 'accidents_by_day_of_week' })
