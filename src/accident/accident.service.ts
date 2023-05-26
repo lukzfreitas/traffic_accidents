@@ -8,10 +8,6 @@ import ConnectionArgs from 'src/connection-args/connection-args';
 export class AccidentService {
   @InjectModel(Accident.name) private AccidentModel: Model<AccidentDocument>;
 
-  async findAll(): Promise<Accident[]> {
-    return await this.AccidentModel.find().exec();
-  }
-
   async findByDayOfWeek(dia_sem: string): Promise<Accident[]> {
     return await this.AccidentModel.find({ dia_sem }).exec();
   }
