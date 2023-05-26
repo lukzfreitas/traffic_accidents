@@ -7,11 +7,6 @@ import ConnectionArgs from '../connection-args/connection-args';
 export class AccidentResolver {
   constructor(private readonly accidentService: AccidentService) {}
 
-  @Query(() => [Accident], { name: 'accidents' })
-  async findAll() {
-    return await this.accidentService.findAll();
-  }
-
   @Query(() => [Accident], { name: 'accidents_range_date' })
   async rangeDate(@Args('args') args: ConnectionArgs): Promise<Accident[]> {
     return this.accidentService.rangeDate(args);
