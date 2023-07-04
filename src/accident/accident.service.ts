@@ -12,15 +12,20 @@ export class AccidentService {
     return await this.AccidentModel.find({ dia_sem }).exec();
   }
 
-  async rangeDate(args: ConnectionArgs): Promise<Accident[]> {
-    return await this.AccidentModel.find(null, null, {
-      limit: args.take,
-      skip: args.skip,
-    }).where({
-      DATA_HORA: {
-        $gte: args.startDate,
-        $lte: args.endDate,
-      },
+  async total(args: ConnectionArgs): Promise<number> {
+    return await this.AccidentModel.count({
+      DATA_HORA: { $gte: args.startDate, $lte: args.endDate },
     });
+  }
+
+  async rangeDate(args: ConnectionArgs): Promise<Accident[]> {
+    return await this.AccidentModel.find(
+      { DATA_HORA: { $gte: args.startDate, $lte: args.endDate } },
+      null,
+      {
+        limit: args.take,
+        skip: args.skip,
+      },
+    );
   }
 }
