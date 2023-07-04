@@ -12,6 +12,11 @@ export class AccidentResolver {
     return this.accidentService.rangeDate(args);
   }
 
+  @Query(() => Number, { name: 'total' })
+  async total(@Args('args') args: ConnectionArgs): Promise<number> {
+    return await this.accidentService.total(args);
+  }
+
   @Query(() => [Accident], { name: 'accidents_by_day_of_week' })
   async findByDayOfWeek(
     @Args('dia_sem', { type: () => String }) dia_sem: string,
